@@ -1,0 +1,16 @@
+import { ID, storage } from "@/appwrite";
+
+
+const uploadImage = async(file: File) => {
+  if (!file)  return;
+
+  const fileUploaded = await storage.createFile(
+    '64747dc400555067cc8e',
+    ID.unique(),
+    file
+  );
+
+  return fileUploaded;
+};
+
+export default uploadImage
